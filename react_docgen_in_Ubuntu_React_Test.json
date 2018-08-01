@@ -1,0 +1,105 @@
+[
+  {
+    "description": "This is an example component.",
+    "displayName": "MyComponent",
+    "methods": [],
+    "props": {
+      "one": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "number"
+          }
+        },
+        "required": false,
+        "description": "A simple `objectOf` propType.",
+        "defaultValue": {
+          "value": "{\n  some: 1,\n  type: 2,\n  of: 3,\n  value: 4\n}",
+          "computed": false
+        }
+      },
+      "two": {
+        "type": {
+          "name": "objectOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "id": {
+                "name": "number",
+                "description": "Just an internal propType for a shape.\n It's also required, and as you can see it supports multi-line comments!",
+                "required": true
+              },
+              "func": {
+                "name": "func",
+                "description": "A simple non-required function",
+                "required": false
+              },
+              "arr": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "shape",
+                  "value": {
+                    "index": {
+                      "name": "number",
+                      "description": "5-level deep propType definition and still works.",
+                      "required": true
+                    }
+                  }
+                },
+                "description": "An `arrayOf` shape",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "A very complex `objectOf` propType."
+      },
+      "msg": {
+        "type": {
+          "name": "instanceOf",
+          "value": "Message"
+        },
+        "required": false,
+        "description": "`instanceOf` is also supported and the custom type will be shown instead of `instanceOf`"
+      },
+      "enm": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "print('News')",
+              "computed": true
+            },
+            {
+              "value": "'Photos'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "`oneOf` is basically an Enum which is also supported but can be pretty big.",
+        "defaultValue": {
+          "value": "'Photos'",
+          "computed": false
+        }
+      },
+      "union": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "instanceOf",
+              "value": "Message"
+            }
+          ]
+        },
+        "required": false,
+        "description": "A multi-type prop is also valid and is displayed as `Union<String|Message>`"
+      }
+    }
+  }
+]
