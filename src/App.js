@@ -65,9 +65,20 @@ class App extends Component {
         // const JsNumber=new Number(1200);
 
         const classyObject= {
-                color: "blue",
-                fontSize: 12
-            }
+            color: "blue",
+            fontSize: 12
+        };
+
+        //     const customProp={
+        //         color: "blue",
+        //         fontSize: 12
+        // };
+
+        // const children = "korea";
+
+        // const element = "Hello, world";
+
+
 
 
 
@@ -88,8 +99,13 @@ class App extends Component {
                 </p>
 
                 <Greeting name= "sara_ soudian" cars={cars} number={number1} person={person} date={date} noteInput={noteInput}
-                          array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject} />
+                          array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject}  />
 
+                {/*<SingleComponet single_child={element} />*/}
+
+
+                {/*single_child={children}*/}
+                {/*customProp={customProp}*/}
 
                 {/*<Greeting name= {cars} />*/}
             </div>
@@ -145,8 +161,10 @@ class Greeting extends React.Component {
                 <br/> classyObject's information are: {this.props.classyObject.color} {this.props.classyObject.fontSize}<br/>
 
 
+                {/*<br/> customProp's information are: {this.props.customProp.color} {this.props.customProp.fontSize}<br/>*/}
+                {/*DOESN'T WORK.*/}
 
-
+                {/*<br/> single_child's information are: {this.props.single_child}<br/>*/}
 
 
 
@@ -160,6 +178,19 @@ class Greeting extends React.Component {
 
     }
 
+}
+
+class SingleComponet extends React.Component {
+    render() {
+
+        return (
+            <h1>
+                <br/> single_child's information are: {this.props.single_child}<br/>
+
+            </h1>
+
+        );
+    }
 }
 Greeting.propTypes = {
     name: PropTypes.string,
@@ -187,8 +218,25 @@ Greeting.propTypes = {
         fontSize: PropTypes.number
     }),
 
+    // customProp: function(props, propName, componentName) {
+    //     if (!/matchme/.test(props[propName])) {
+    //         return new Error(
+    //             'Invalid prop `' + propName + '` supplied to' +
+    //             ' `' + componentName + '`. Validation failed.'
+    //         );
+    //     }
+    // },
+
+
+
+
+
 };
 // PropTypes.instanceOf(Message)
+
+SingleComponet.propTypes = {
+    single_child: PropTypes.element.isRequired,
+}
 
 
 export default App;
