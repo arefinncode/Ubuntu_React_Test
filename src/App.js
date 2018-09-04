@@ -297,7 +297,8 @@ Greeting.propTypes = {
 
     blist:PropTypes.arrayOf(PropTypes.shape(
         {
-            number: PropTypes.number,
+            // number: PropTypes.number,
+            optionalNumber: PropTypes.number,
             address: PropTypes.string,
             createdAt:PropTypes.oneOfType([
                 PropTypes.instanceOf(Date),

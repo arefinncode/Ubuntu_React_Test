@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6a62efb-f7e6-45dc-ad8c-a0ff09ff3ccb" name="Default" comment="" />
+    <list default="true" id="d6a62efb-f7e6-45dc-ad8c-a0ff09ff3ccb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +19,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="307" column="36" lean-forward="true" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
+            <state relative-caret-position="138">
+              <caret line="300" column="28" selection-start-line="300" selection-start-column="28" selection-end-line="300" selection-end-column="28" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -52,6 +54,7 @@
       <find>api</find>
       <find>single_child's information are</find>
       <find>019</find>
+      <find>number:</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,11 +175,12 @@
       <workItem from="1535780960401" duration="15629000" />
       <workItem from="1535956269561" duration="615000" />
       <workItem from="1536041153169" duration="3430000" />
+      <workItem from="1536044910016" duration="261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54063000" />
+    <option name="totallyTimeSpent" value="54324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="78" y="92" width="1774" height="951" extended-state="0" />
@@ -215,6 +219,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5219">
+          <caret line="307" column="36" lean-forward="true" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -508,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="307" column="36" lean-forward="true" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
+        <state relative-caret-position="138">
+          <caret line="300" column="28" selection-start-line="300" selection-start-column="28" selection-end-line="300" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
