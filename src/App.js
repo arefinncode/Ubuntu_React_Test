@@ -48,6 +48,54 @@ class App extends Component {
             spouse: null
         };
 
+
+        let blist=
+            [
+                {
+                    number:0,
+                    address:"Dhaka, mIrpur",
+                    createdAt:"some date",
+                    flag:0,
+                    gender:1,
+                    image:"https://meteor183.s3.amazonaws.com/files%2Fdhtest%2FIncognito0.7374555212445557propic.png",
+                    name:"Incognito",
+                    note:"420",
+                    phone:"019112745645",
+                    userId:"TpbQeN3xhBc7M",
+                    id:"mRYjsp5XoMfd",
+                    version:1
+                },
+                {
+                    number:1,
+                    address:"4/A",
+                    createdAt:"some date",
+                    flag:0,
+                    gender:0,
+                    image:"https://meteor183.s3.amazonaws.com/files%2Fdhtest%2FFazil+120.9834444855064628propic.png",
+                    name:"Fazil 12",
+                    note:"420",
+                    phone:"0191126456674",
+                    userId:"TpbQeN3xhBc7",
+                    _id:"6hHscw5Zbi7vD",
+                    _version:1
+                },
+                {
+                    number:3,
+                    address:"",
+                    createdAt:"some date",
+                    flag:0,
+                    gender:0,
+                    image:"https://s183-ap-southeast-1.amazonaws.com/meteor183/files/itduw2TaR8GcaBm7Q.png",
+                    name:"Mastan",
+                    note:"96 ",
+                    phone:"01911456456",
+                    userId:"TpbQeN3x",
+                    _id:"yhQjLFc3S",
+                    _version:1
+                }
+            ]
+
+
         let date = new Date();
 
         // let noteInput=420;
@@ -99,15 +147,19 @@ class App extends Component {
                 </p>
 
                 <Greeting name= "sara_ soudian" cars={cars} number={number1} person={person} date={date} noteInput={noteInput}
-                          array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject}  />
+                          array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject} blist={blist} />
 
                 {/*<SingleComponet single_child={element} />*/}
+
+
 
 
                 {/*single_child={children}*/}
                 {/*customProp={customProp}*/}
 
                 {/*<Greeting name= {cars} />*/}
+
+
             </div>
         );
     }
@@ -165,6 +217,21 @@ class Greeting extends React.Component {
                 {/*DOESN'T WORK.*/}
 
                 {/*<br/> single_child's information are: {this.props.single_child}<br/>*/}
+
+                <br/>
+                <ul>
+                    blist information are:
+                    {this.props.blist.map((oneBlst) =>
+
+                        <li key={oneBlst.name}>
+                            {oneBlst.name} -->
+                            {oneBlst.address}
+
+                        </li>
+                        )
+                        }
+                </ul>
+                {/*{this.props.blist.address} {this.props.blist.name}*/}
 
 
 
@@ -227,6 +294,32 @@ Greeting.propTypes = {
     //     }
     // },
 
+
+    blist:PropTypes.arrayOf(PropTypes.shape(
+        {
+            number: PropTypes.number,
+            address: PropTypes.string,
+            createdAt:PropTypes.oneOfType([
+                PropTypes.instanceOf(Date),
+                PropTypes.string,
+            ]),
+            flag: PropTypes.number,
+            gender:PropTypes.number,
+            image: PropTypes.string,
+
+            name: PropTypes.string,
+
+            note: PropTypes.string,
+            phone:PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.number,
+            ]),
+            userId:  PropTypes.string,
+            id: PropTypes.string,
+            version:  PropTypes.number
+
+        }
+    ))
 
 
 
