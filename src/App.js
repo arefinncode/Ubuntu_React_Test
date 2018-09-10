@@ -11,6 +11,21 @@ import './App.css';
 
 class App extends Component {
 
+
+
+    constructor(props) {
+        super(props);
+        // this.state = {date: new Date()};
+    }
+    // componentDidMount() {
+    //     focus() {
+    //         // Explicitly focus the text input using the raw DOM API
+    //         // Note: we're accessing "current" to get the DOM node
+    //         this.textInput.current.focus();
+    //     }
+    // }
+
+
     render() {
 
         const cars = [{id: 1,name:"Saab"},
@@ -146,10 +161,20 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
 
-                <Greeting name= "sara_ soudian" cars={cars} number={number1} person={person} date={date} noteInput={noteInput}
-                          array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject} blist={blist} />
+                {/*<Greeting name= "sara_ soudian" cars={cars} number={number1} person={person} date={date} noteInput={noteInput}*/}
+                {/*array_of_numbers={array_of_numbers}  JsNumber={JsNumber} classyObject={classyObject} blist={blist} />*/}
 
                 {/*<SingleComponet single_child={element} />*/}
+
+                <CustomTextInput/>
+
+                {/*<CustomTextInput2/>*/}
+
+                {/*<CustomTextInput4/>*/}
+
+
+
+
 
 
 
@@ -161,6 +186,62 @@ class App extends Component {
 
 
             </div>
+        );
+    }
+}
+
+
+
+class CustomTextInput4 extends React.Component {
+    constructor(props) {
+        super(props);
+        // create a ref to store the textInput DOM element
+        this.textInput = React.createRef();
+        this.focusTextInput = this.focusTextInput.bind(this);
+    }
+
+    focusTextInput() {
+        // Explicitly focus the text input using the raw DOM API
+        // Note: we're accessing "current" to get the DOM node
+        this.textInput.current.focus();
+    }
+
+    render() {
+        // tell React that we want to associate the <input> ref
+        // with the `textInput` that we created in the constructor
+        return (
+            <div>
+                <input
+                    type="text"
+                    ref={this.textInput} />
+
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.focusTextInput}
+                />
+            </div>
+        );
+    }
+}
+
+// Now you can set focus when required.
+// this.inputElement.current.focus();
+
+class CustomTextInput2 extends React.Component {
+    constructor(props) {
+        super(props);
+        // Create a ref to store the textInput DOM element
+        this.textInput = React.createRef();
+    }
+    render() {
+        // Use the `ref` callback to store a reference to the text input DOM
+        // element in an instance field (for example, this.textInput).
+        return (
+            <input
+                type="text"
+                ref={this.textInput}
+            />
         );
     }
 }
@@ -228,8 +309,8 @@ class Greeting extends React.Component {
                             {oneBlst.address}
 
                         </li>
-                        )
-                        }
+                    )
+                    }
                 </ul>
                 {/*{this.props.blist.address} {this.props.blist.name}*/}
 
@@ -259,6 +340,85 @@ class SingleComponet extends React.Component {
         );
     }
 }
+
+
+class CustomTextInput extends React.Component {
+    constructor(props) {
+        super(props);
+
+        // this.textInput = null;
+        // let objectA = {a: 'a', b: 'b',c:'c',d:'d',e:'e'};
+        // this.textInput = {};
+        this.textInput={a: 'a', b: 'b',c:'c',d:'d',e:'e'};
+
+        this.setTextInputRef = element => {
+            // console.log("Arefin");
+            this.textInput[element] = element;
+        };
+
+        this.focusTextInput = (element) => {
+            // Focus the text input using the raw DOM API
+
+            console.log('elemnent is ',element);
+            if (this.textInput.element!==undefined ) this.textInput.element.focus();
+        };
+    }
+
+    componentDidMount() {
+        // autofocus the input on mount
+        this.focusTextInput();
+    }
+
+    render() {
+        // Use the `ref` callback to store a reference to the text input DOM
+        // element in an instance field (for example, this.textInput).
+        return (
+            <div>
+                <input
+                    type="text"
+                    ref={this.setTextInputRef('a')}
+                />
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.focusTextInput('a')}
+                />
+
+                <input
+                    type="text"
+                    ref={this.setTextInputRef('b')}
+                />
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.focusTextInput('b')}
+                />
+                <input
+                    type="text"
+                    ref={this.setTextInputRef('c')}
+                />
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.focusTextInput('c')}
+                />
+
+                <input
+                    type="text"
+                    ref={this.setTextInputRef('d')}
+                />
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.focusTextInput('d')}
+                />
+
+            </div>
+        );
+    }
+}
+
+
 Greeting.propTypes = {
     name: PropTypes.string,
     cars:PropTypes.array,
@@ -331,6 +491,10 @@ Greeting.propTypes = {
 SingleComponet.propTypes = {
     single_child: PropTypes.element.isRequired,
 }
+
+
+
+
 
 
 export default App;
